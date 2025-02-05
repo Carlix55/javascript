@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonoloto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .numbers {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .number {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 50%;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Bonoloto</h1>
+        <div class="numbers" id="numbers">
+            <!-- Números generados aparecerán aquí -->
+        </div>
+        <button onclick="generateNumbers()">Generar Números</button>
+    </div>
+
+    <script>
+       function generateNumbers() {
+    const numbersContainer = document.getElementById('numbers');
+    numbersContainer.innerHTML = '';  // Limpiar el contenedor antes de generar nuevos números
+    const numbers = [];
+    
+    // Solicitar al usuario el número de combinaciones, con validación
+    let resultado = prompt("Introduce el número de veces que quieres que se genere la combinación (debe estar entre 0 y 49, separado por guiones)");
+
+    // Validación de la entrada
+    while (!resultado.match(/^(\d{1,2}(\-(\d{1,2}))*|\d{1,2})$/) || !resultado.split('-').every(num => num >= 0 && num <= 49)) {
+        resultado = prompt("Entrada inválida. Introduce el número de veces que quieres que se genere la combinación (debe estar entre 0 y 49, separado por guiones)");
+    }
+
+    // Parsear el número ingresado para saber cuántas combinaciones generar
+    const combinaciones = resultado.split('-').map(num => parseInt(num));
+
+    // Generar los números aleatorios basados en el número de combinaciones
+    for (let i = 0; i < combinaciones.length; i++) {
+        const generatedNumbers = [];
+        while (generatedNumbers.length < 6) {
+            const num = Math.floor(Math.random() * 49) + 1;
+            if (!generatedNumbers.includes(num)) {
+                generatedNumbers.push(num);
+            }
+        }
+        generatedNumbers.sort((a, b) => a - b);
+
+        // Mostrar los números generados en el DOM
+        const combinationElement = document.createElement('div');
+        combinationElement.className = 'combination';
+        combinationElement.textContent = `Combinación ${i + 1}: ${generatedNumbers.join(', ')}`;
+        numbersContainer.appendChild(combinationElement);
+    }
+
+    // Alerta con la combinación generada
+    alert("Combinaciones generadas correctamente.");
+}
+
+    </script>
+</body>
+</html></div>

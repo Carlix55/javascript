@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    
+</head>
+<style>
+    #caja{
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        position: absolute;
+    }
+    .lista{
+        color: blue;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+</style>
+<body>
+    <div id="accordion">
+        <h3>Section 1</h3>
+        <div>
+            <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+        </div>
+
+    </div>
+ <button id="boton1">Aprieta aqui</button>
+ <p id="parrafo">Holaa</p>
+ <p id="contador"></p>
+ <ul id="mylist">
+    <li>hola</li>
+    <li>hola</li>
+    <li>hola</li>
+    <li>hola</li>
+ </ul>
+ <button id="agregarclase">Agregar Clase</button>
+ <button id="eliminarclase">Eliminar Clase</button><br><br>
+ <div id="caja"></div>
+ <form id="form">
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <span id="calculo"></span><br><br>
+    <input type="text" id="texto">
+    <input type="text" id="email">
+    <span id="email1">Se ha enviado correctamente</span>
+    <button type="submit">aaaa</button>
+    <input type="text" id="edad" required>
+ </form>
+ <img src="daft.jpg" alt="" id="imagen">
+
+
+ <script>
+/*
+    //Ej1
+    $("#boton1").click(function () { 
+        alert("Holaa");
+        });
+*/
+
+/*
+    //Ej2
+            var blue = false ;
+        $("#parrafo").hover(function(){
+            blue= !blue;
+            if(blue){
+            $(this).css("color", "blue")}
+            else{
+            $(this).css("color", "black")
+            }     
+        });
+*/
+
+/*
+    //Ej3
+            var suma = 0;
+        $("#boton1").click(function () {
+            suma ++;
+            $("#contador").text(suma);  
+        });
+*/
+
+/*
+    //Ej4
+        $("ul").ready(function (){
+            $(`ul li:first`).hide();
+        });
+*/
+
+/*
+    //Ej5
+            var green = false;
+        $("#caja").click(function () { 
+            green = !green;
+            if(green){
+            $(this).css("background-color", "green")}
+            else{
+                $(this).css("background-color", "black")
+            }
+        });
+*/
+
+/*
+    //Ej6
+        $("#form").submit(function (e) { 
+            e.preventDefault();
+            var texto = $("#texto").val();
+            if(texto.trim() === ""){
+                alert("Introduce algo maquina")
+            }
+        });
+*/
+
+/*
+    //Ej7
+        $("#form").submit(function (e) { 
+            e.preventDefault();
+            var num1 =parseFloat($("#num1").val());
+            var num2 =parseFloat($("#num2").val());
+            let suma=num1+num2;
+            $("#calculo").text(suma);});
+*/
+
+/*
+    //Ej8
+        $("#agregarclase").click(function(){
+            $("#mylist li").addClass("lista");
+        })
+        $("#eliminarclase").click(function(){
+            $("#mylist li").removeClass("lista");
+        })
+*/
+
+/*
+    //Ej9
+        $(document).mousemove(function(e){
+            var mouseX = e.pageX;
+            var mouseY = e.pageY;
+            $("#caja").css({
+                left: mouseX - $("#caja").width() / 2,
+                top: mouseY - $("#caja").height() / 2
+            });
+        });
+*/
+
+/*
+    //Ej10
+        $("document").ready(function(){
+            $("#accordion").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle:"content"
+            });
+        });
+*/
+
+/*
+    //Ej11
+            var imagen=false;
+        $("#imagen").hover(function(){
+            imagen=!imagen
+            if(imagen){
+                $(this).attr("src","jque.PNG")}
+            else{
+                $(this).attr("src", "daft.jpg")
+            }
+        });
+*/
+
+/*
+    //Ej12  
+        $(document).ready(function () {
+             $("#caja").animate({left: "80%"},3000 );
+        });
+*/
+
+/*
+    //Ej13
+        $("#boton1").click(function(){
+            $("#form")[0].reset();
+        });
+*/
+
+/*
+    //Ej14
+        
+        var emailRegex = (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/);
+    $("#form").submit(function (e) {
+        var email =$("#email").val();
+        var valid = false;
+        
+        if(emailRegex.test(email)){
+            $("#email1").show();
+            
+            setTimeout(function() {
+                $("#email1").hide()},2000);
+                valid=true;
+        }else{
+        e.preventDefault();
+        }     
+    });
+    $("#email1").hide(); 
+*/
+
+/*
+    //Ej15
+        $("#form").submit(function(e){
+            var edad = $("#edad").val();
+            var regex = /^[0-9]+$/;
+            if(!regex.test(edad)){
+                e.preventDefault();
+            }
+            else if( edad <= 1 || edad > 100) {
+                e.preventDefault();
+            }
+        });
+*/
+
+    //Ej16
+        
+
+
+
+
+      
+      
+
+ 
+            
+        
+
+
+
+
+ </script>   
+</body>
+</html>

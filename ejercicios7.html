@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Lorem Ipsum</h1>
+    <p id="parrafo">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+        it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+        including versions of Lorem Ipsum.</p>
+    <button id="boton1"> Cambiar de color</button>
+    <input type="color" id="color">
+    <h1>Lorem Ipsum</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.</p>
+    <button id="boton2"> </button>
+    <h1>Lorem Ipsum</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.</p>
+    <button id="boton3"> </button>
+    <h1>Lorem Ipsum</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.</p>
+    <button id="boton4"> </button>
+    <div id="caja" style="width: 100px; height: 100px; background-color: blue; position: relative;">
+
+    </div>
+    <ul>
+        <li>seré eliminado</li>
+        <li>seré eliminado</li>
+        <li>seré eliminado</li>
+        <li>seré eliminado</li>
+    </ul>
+
+    <button id="botone">Eliminar </button>
+    <input type="text" id="campo" placeholder="Desapareceee">
+    <button id="botontexto">Eliminar</button>
+
+
+    <script>
+        /*
+            //Ej1
+                const botones =document.querySelectorAll('button')
+                botones.forEach(boton => {
+                boton.textContent = ("Clic aquí");
+                }); 
+        */
+
+        /*
+            //Ej2
+                const boton= document.getElementById("boton1");
+                boton.addEventListener("click",()=>{document.body.style.backgroundColor="red"})
+        */
+
+        /*
+            //Ej3
+                const caja= document.getElementById("caja");
+                const parrafo=document.createElement("p");
+                parrafo.textContent="Nuevo parrafo";
+                caja.appendChild(parrafo);
+        */
+
+        /*
+            //Ej4
+                const botone= document.getElementById("botone");
+                const eliminar = document.querySelectorAll("li");
+                botone.addEventListener("dblclick",()=>{eliminar.forEach(li => {
+                li.remove();
+                })});
+        */
+
+        /*
+            //Ej5
+                const boton = document.getElementById("boton1");
+                boton.addEventListener("dblclick",()=>{document.getElementById("parrafo").style.color="blue"
+                });
+        */
+
+        /*
+            //Ej6
+                const boton = document.getElementById("botone")
+                let despla = 0
+                boton.addEventListener("click",()=>{
+                    despla += 50; 
+                    document.getElementById("caja").style.left=despla + "px";});
+        */
+        /*
+            //Ej7
+                const boton = document.getElementById("botontexto");
+                boton.addEventListener("click",()=>{document.getElementById("campo").disabled=true});
+        */
+
+        /*
+            //Ej8
+            window.onload = function (){
+                alert (`¡Bienvenido a la página`)
+            }
+        */
+
+        /*
+            //Ej9
+                document.addEventListener("keydown",()=>{document.body.style.backgroundColor="red"});
+        */
+
+        /*
+            //Ej10
+                const parrafo = document.getElementById("parrafo");
+                document.body.addEventListener("click",()=>{
+                    const clon = parrafo.cloneNode(true);
+                    parrafo.parentNode.appendChild(clon);
+                });
+        */
+        /*
+            //Ej11
+                const color = document.getElementById("color");
+                const parrafo = document.getElementById("parrafo");
+                color.addEventListener("input",()=>{parrafo.style.color=color.value;});
+        */
+
+        /*
+            //Ej12
+                
+                const parrafo = document.getElementById("parrafo");
+                parrafo.addEventListener("mousedown",()=>{parrafo.style.color="blue";});
+                parrafo.addEventListener('mouseup', function() {parrafo.style.color = '';})
+        */
+
+        //Ej13
+
+        const color = document.getElementById("color");
+        const parrafo = document.getElementById("parrafo");
+        color.addEventListener("input", () => { parrafo.style.color = color.value; console.log(`El color del texto ha cambiado a ${color.value}`); })
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

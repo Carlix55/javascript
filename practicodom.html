@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="practicodom.js"></script>
+</head>
+
+<body>
+    <p id="alerta"></p>
+    <h1 id="titulo">Hola Mundo</h1>+
+    <input type="text" id="campo">
+    <p id="texto">Texto inicial</p>
+    <div id="caja" style="width:50px; height:50px; background:red; position:absolute;">Holaaaa </div>
+    <ul id="miLista">
+        <li id="lista">Elemento 1</li>
+        <li>Elemento 2</li>
+    </ul>
+    <p id="menu" class="activo">
+        ppp
+
+    </p>
+    <ul id="milista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <button id="miBoton">Haz clic aquí</button>
+    <img id="miImagen" src="https://via.placeholder.com/150" alt="Imagen inicial" style="cursor: pointer;">
+
+
+
+
+    <script>
+        /*
+            //Ej1
+                const titulo = document.getElementById("titulo");
+                titulo.textContent="Bienvenido a la web";
+        */
+        /*
+            //Ej2
+                const texto = document.getElementById("textoImportante");
+                texto.style.color="red";
+                texto.style.fontSize="20px"
+        */
+        /*
+             //Ej3
+                 const lista = document.getElementById("miLista");
+                 const element = document.createElement("li")
+                 lista.appendChild(element)
+                 element.textContent="Elemento 3"
+         */
+        /*
+            //Ej4
+                const lista = document.getElementById("milista");
+                lista.removeChild(lista.firstElementChild);
+        */
+        /*
+            //Ej5
+                const miBoton= document.getElementById("miBoton");
+                miBoton.addEventListener("click",()=>{
+                    alert("¡Botón presionado!");
+                });
+        */
+        /*
+            //Ej6
+                const imagen = document.getElementById("miImagen");
+                imagen.addEventListener("click",()=>{imagen.src = "https://via.placeholder.com/150/FF0000/FFFFFF?text=Imagen+Cambiada";
+                });
+        */
+
+        /*
+            //Ej7
+                const titulo = document.getElementById("texto");
+                titulo.textContent="Texto cambiado";
+        */
+
+        /*
+            //Ej8
+                const miBoton= document.getElementById("miBoton");
+                function cambiaColor() {
+                    document.body.style.backgroundColor = 'blue';
+                }
+                miBoton.addEventListener("click",cambiaColor)
+        */
+
+        /*
+            //Ej9
+                const miBoton= document.getElementById("miBoton");    
+                miBoton.addEventListener("click",()=>{ document.getElementById("texto").style.fontSize = '50px'})
+        */
+
+        /*
+            //Ej10
+                const miBoton= document.getElementById("miBoton");    
+                miBoton.addEventListener("click",()=>{ miBoton.textContent="Botón presionado"})
+        */
+
+        /*
+            //Ej11
+                const miBoton= document.getElementById("miBoton");
+                const texto = document.getElementById("texto");
+                miBoton.addEventListener("mouseover",()=>{document.getElementById("texto").style.color = 'green'})
+                miBoton.addEventListener("mouseleave",()=>{document.getElementById("texto").style.color='black'})
+        */
+
+        /*
+            //Ej12
+                document.getElementById("titulo").textContent = "Hola, DOM";
+        */
+
+        /*
+            //Ej13
+                document.getElementById("texto").style.color = "red";
+        */
+
+        /*
+            //Ej14
+                document.getElementById("miBoton").addEventListener("click", () => {
+                document.getElementById("lista").style.display = "none";
+                });
+        */
+
+        /*
+            //Ej15
+                document.getElementById("texto").classList.add("textoo");
+        */
+
+        /*
+            //Ej16
+                let posicion = 0;
+                 setInterval(() => {
+                posicion += 10;
+                document.getElementById("caja").style.left = posicion + "px";
+                }, 1000);
+        */
+
+
+        /*
+            //Ej17
+                document.getElementById("campo").addEventListener("change", (e) => {
+                document.getElementById("texto").textContent = `Has escrito: ${e.target.value}`;
+                });
+        */
+
+        /*
+            //Ej18
+                const caja = document.getElementById("caja");
+                const parrafo = document.createElement("p");
+                parrafo.textContent="Nuevo parrafo"
+                caja.appendChild(parrafo);
+        */
+
+        /*
+            //Ej19
+                document.getElementById("menu").classList.remove("activo");
+        */
+
+        /*
+            //Ej20
+                document.getElementById("texto").addEventListener("mouseover",()=>{document.getElementById("texto").textContent="texto2"})
+                document.getElementById("texto").addEventListener("mouseleave",()=>{document.getElementById("texto").textContent="Texto inicial"})
+        */
+
+        /*
+            //Ej21
+                document.addEventListener("DOMContentLoaded", () => {
+                alert("La página se ha cargado completamente")
+                });
+        */
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

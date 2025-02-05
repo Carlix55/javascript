@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<style>
+    #caja {
+        background-color: red;
+        width: 50px;
+        height: 50px;
+        position: relative;
+    }
+    #img {
+        width: 50px;
+        height: 50px
+    }
+    #true{
+        color: green;
+    }
+</style>
+
+<body>
+    <!--
+    <p id="text1">Texto original</p>
+    <button id="miboton">aprieta</button>
+    <p>Texto original</p>
+    <a href="https://www.youtube.com/watch?v=0W-jpQzzBBI">Hola</a>
+    
+    <p>Texto original</p>
+    <p>Texto original</p>
+    <p id="conteo"></p>
+    <ul>
+        <li>Hola</li>
+        <li>Hola</li>
+        <li>Hola</li>
+    </ul>
+    <ol></ol>
+        <form id="formulario">
+        <label for="nombre">Introduce nombre:</label>
+        <input type="text" id="nombre">
+        <button type="submit">Enviar</button>
+        </form>
+        <div id="caja"></div>
+        <img src="daft.jpg" id="img">
+        <button id="mas">+</button>
+        <button id="menos">-</button>
+        <span id="contador">0</span>
+        <label for="cars">Choose a car:</label>
+
+        <select name="cars" id="cars">
+        <option value="">Seleciona un coche</option>
+        <option value="Volvo">Volvo</option>
+        <option value="Audi">Audi</option>
+        </select>
+        <p id="precio"></p>
+        <form id="email">
+        <label for="email">Introduce un e-mail</label>
+        <input type="text" id="correo">
+        <button type="submit">Enviar</button>
+        </form>
+        <p id="comp"></p>-->
+    <h1>Validación de Campos Obligatorios</h1>
+    <form id="form1">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
+        <span class="error" id="errornombre">Campo obligatorio</span><br><br>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="text" id="email">
+        <span class="error" id="erroremail">Campo obligatorio</span>
+        <span class="errore1" id="erroremail">Introduce un correo correcto</span><br><br>
+
+        <label for="edad">Fecha de nacimiento:</label>
+        <input type="date" id="edad">
+        <span class="error1" id="erroredad1">Campo obligatorio</span>
+        <span class="error2" id="erroredad2">Mayor o igual a 18 años</span><br><br>
+        
+        <button type="submit">Enviar</button><br><br>
+        <span id="true">Todos los datos se han enviado correctamente</span>
+        <!--
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password">
+            <span class="error" id="errorpassword1">Debe tener al menos 8 caracteres</span>
+            <span class="error" id="errorpassword2">Campo obligatorio</span><br><br>
+
+            <label for="confirmacon">Confirma tu Contraseña:</label>
+            <input type="password" id="confirmacon">
+            <span class="error1" id="errorcon">Las contraseñas no coinciden</span><br><br>
+            
+            <button type="submit">Enviar</button>
+        -->
+
+        
+    </form>
+
+    <script>
+        /*
+            //Ej1
+                $("p").text("Texto modificado con jQuery");
+        */
+
+        /*
+            //Ej2
+                $("#miboton").click(function() {
+                    console.log("Se apreto")
+                }
+                );
+        */
+
+        /*
+            //Ej3
+                $("#miboton").click(function(){
+                    $("#caja").hide(3000);
+                })
+        */
+
+        /*
+            //Ej4
+                $("#caja").mouseover(function(){
+                    $(this).css("background-color", "blue");
+                });
+        */
+
+        /*
+            //Ej5
+                $("#miboton").click(function(){
+                    $("li").toggle(100);
+                })
+        */
+
+        /*
+            //Ej6
+                $("ul").addClass("Nueva Clase");
+        */
+
+        /*
+            //Ej7
+                $("#caja").append("<p>Un elemento creado</p>");
+        */
+
+        /*
+            //Ej8
+                $("#miboton").click(function(){
+                    $("a").attr("href","https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/jquery-append/");
+                })
+        */
+
+        /*
+            //Ej9
+                const cantidad = $("li").length;
+                $("#conteo").text(`Aqui tenemos ${cantidad}`);
+        */
+
+        /*
+            //Ej10
+                $("#miboton").click(function() {
+                const lista = $("ol");
+                    lista.empty(); 
+                    for (let i = 1; i <= 10; i++) {
+                        lista.append(`<li>${i}</li>`);
+                    }});
+        */
+
+        /*
+            //Ej11
+                $("#miboton").click(function (){
+                    if($("p").css("color") === 'rgb(255, 0, 0)')
+                    {$("p").css("color","black")}
+                    else{$("p").css("color","red")}
+                    });
+        */
+
+        /*
+            //Ej12
+                $("#formulario").submit(function(event){
+                    if($("#nombre").val() ===""){
+                        alert("No se puede enviar vacío");
+                        event.preventDefault();
+                    }});
+        */
+
+        /*
+            //Ej13
+                $("#miboton").click(function (){
+                    if($("#caja").css("top")== "0px"){
+                    $("#caja").animate({
+                        top: "50px"},1000)
+                        
+                    }else{
+                    $("#caja").animate({
+                        top: "0px"},1000)
+                    }
+                });
+        */
+
+        /*
+            //Ej14
+                $("#miboton").click(function(){
+                    $("#img").toggle();
+                });
+        */
+
+        /*
+            //Ej15
+                $("#text1").mouseover(function(){
+                    $(this).text("Texto cambiado")
+                });
+        */
+
+        /*
+            //Ej16
+                let contador = 0;
+                function actualizarcont() {
+                $("#contador").text(contador);
+                }
+                $("#mas").click(function(){
+                    contador++;
+                    actualizarcont();
+                });
+                $("#menos").click(function(){
+                    contador--;
+                    actualizarcont();
+                });
+        */
+
+        /*
+            //Ej17
+                $("#miboton").click(function(){
+                    $("ul").toggle()
+                });
+        */
+
+        /*
+            //Ej18
+                $("#miboton").click(function(){
+                    $("#caja").animate({width: "100px",height: "100px"},1000)
+                            .animate({width: "50px",height: "50px"},1000);
+                });
+        */
+
+        /*
+            //Ej19
+                $("#cars").change(function(){
+                    var valorSele = $(this).val();
+                    if (valorSele === "volvo"){
+                        $("#precio").text("200000€")
+                    }else if (valorSele === "audi"){
+                        $("#precio").text("300000€")
+                    } 
+                });
+        */
+
+        /*
+            //Ej20
+                $("#cars").change(function(){
+                    var valorSele = $(this).val();
+                        $("#precio").text(valorSele)   
+                });
+        */
+
+        /*
+            //Ej21
+                $("body").click(function(){
+                    alert("Ten cuidado máquina");
+                });
+        */
+
+        /*
+            //Ej22
+                $("#miboton").click(function(){
+                    $("#caja").fadeToggle()
+                })
+        */
+
+        /*
+            //Ej23
+                $("#miboton").click(function(){
+                    $(this).prop("disabled", true);
+                });
+        */
+
+        /*
+            //Ej24
+                $("li").hover(function(){
+                    $(this).css("background","yellow")
+                });
+        */
+
+        /*
+            //Ej25
+                $("#email").change(function(event){
+                    event.preventDefault()
+                    var email = $("#correo").val(); 
+                    if(email.includes("@")&& email.includes(".")){
+                        $("#comp").text("correo valido")
+                        
+                    }else {
+                        $("#comp").text("correo no valido")
+                    }
+                    });
+        */
+
+        /*
+            //Ej26
+                $(".error1").hide();
+                $("#errorpassword1").hide();
+                $("#form1").on("submit", function (form){
+                    form.preventDefault();
+                    $(".error").hide();
+                    let valid = true;
+                    const contra = $("#password").val();
+                    const confirmacon = $("#confirmacon").val();
+                if ($("#nombre").val().trim() === ""){
+                    $("#errornombre").show();
+                    valid = false;
+                };
+                if ($("#email").val().trim()===""){
+                    $("#erroremail").show();
+                    valid = false;
+                };
+                if ($("#password").val().trim()===""){
+                    $("#errorpassword2").show();
+                    valid = false;
+                };
+                if (contra !== confirmacon){
+                    $(".error1").show();
+                    valid = false;
+                };
+        
+                if($("#password").val().length < 8){
+                    $("#errorpassword1").show();
+                    
+                };
+                });
+        */
+
+        //Ej27
+        $(".error2").hide();
+        $(".errore1").hide();
+        $("#true").hide();
+        $(".error1").hide();
+        $("#form1").on("submit", function (form) {
+            form.preventDefault();
+            $(".error").hide();
+            let valid = true;
+            var email = $("#email").val();
+            var fechaNacimiento = $("#edad").val();
+                if (!fechaNacimiento) {
+                    return; 
+                }
+            var nacimiento = new Date(fechaNacimiento);
+            var hoy = new Date();
+            var edad = hoy.getFullYear() - nacimiento.getFullYear();
+            var difm = hoy.getMonth() - nacimiento.getMonth();
+
+            if ($("#nombre").val().trim() === "") {
+                $("#errornombre").show();
+                valid = false;
+            }else {
+                valid= true;
+            }
+            if ($("#email").val().trim() === "") {
+                $("#erroremail").show();
+                valid = false;
+            }else {
+                valid= true;
+            }
+            if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+                $(".errore1").show();
+                valid=false;
+            }else {
+                valid= true;
+            }
+
+            if ($("#edad").val() === "") {
+                $(".error1").show();
+                valid = false;
+            } else {
+                valid= true;
+            }
+            if(difm < 0 || (difm === 0 && hoy.getDate() < nacimiento.getDate())){
+                edad--;
+                }
+            if(edad < 18){
+                $(".error2").show();
+                valid = false ;
+            }else{
+                valid= true;
+            }               
+            
+            if(valid = true){
+                $("#true").show();
+            }else{
+                $("#true").hide();
+            }
+        });
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
